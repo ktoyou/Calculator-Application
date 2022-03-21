@@ -85,6 +85,8 @@
                         Content="-" Command="{Binding ActionCommand}" CommandParameter="{Binding Minus, Source={StaticResource Actions}}"/>
                 <Button Style="{StaticResource CustomButton}" Margin="5" Grid.Row="3" Grid.Column="4" Height="60"
                         Content="/" Command="{Binding ActionCommand}" CommandParameter="{Binding Divide, Source={StaticResource Actions}}"/>
+                <Button Style="{StaticResource CustomButton}" Margin="5" Grid.Row="4" Grid.Column="4" Height="60"
+                        Content="*" Command="{Binding ActionCommand}" CommandParameter="{Binding Multiply, Source={StaticResource Actions}}"/>
             </Grid>
         </Grid>
     </Grid>
