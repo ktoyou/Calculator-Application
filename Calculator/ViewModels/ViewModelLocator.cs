@@ -6,7 +6,6 @@ namespace Calculator.ViewModels
     {
         public static ViewModelLocator Instance = new ViewModelLocator();
 
-        public MainWindowViewModel MainWindowViewModel { get; set; } = 
-            ServiceProvider.GetViewModel<MainWindowViewModel>() as MainWindowViewModel;
+        public MainWindowViewModel MainWindowViewModel { get; set; } = ServiceProvider.GetViewModel<MainWindowViewModel>();
     }
 }

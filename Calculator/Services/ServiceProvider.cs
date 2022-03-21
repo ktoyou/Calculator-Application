@@ -17,6 +17,6 @@ namespace Calculator.Services
             _provider = services.BuildServiceProvider();
         }
 
-        public static BaseViewModel GetViewModel<T>() where T: BaseViewModel => _provider.GetService<T>();
+        public static T GetViewModel<T>() where T: BaseViewModel => _provider.GetService<T>();
     }
 }
