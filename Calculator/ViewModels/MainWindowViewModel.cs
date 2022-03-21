@@ -87,9 +87,12 @@ namespace Calculator.ViewModels
             if (CurrentNumber == null || CurrentNumber.Length == 0) return;
             if(!float.TryParse(CurrentNumber, out _)) return;
 
-            _previousNumber = CurrentNumber;
-            Expression = _previousNumber + " " + _currentAction.GetExpression();
-            CurrentNumber = null;
+            if(_previousNumber == null)
+            {
+                _previousNumber = CurrentNumber;
+                Expression = _previousNumber + " " + _currentAction.GetExpression();
+                CurrentNumber = null;
+            }
         }
 
         private string _currentNumber;
