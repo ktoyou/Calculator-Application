@@ -37,6 +37,8 @@ namespace Calculator.ViewModels
 
         public ICommand ClearCommand { get; set; }
 
+        public ICommand SqrtCommand { get; set; }
+
         public ICommand ClearCurrentNumberCommand { get; set; }
 
         public MainWindowViewModel()
@@ -47,6 +49,14 @@ namespace Calculator.ViewModels
             ActionCommand = new RelayCommand(EnterAction, true);
             EqualCommand = new RelayCommand(Equal, true);
             ClearCommand = new RelayCommand(Clear, true);
+            SqrtCommand = new RelayCommand(Sqrt, true);
+        }
+
+        private void Sqrt(object obj)
+        {
+            if (CurrentNumber == null) return;
+            if (!float.TryParse(CurrentNumber, out _)) return;
+            CurrentNumber = Math.Pow(double.Parse(CurrentNumber), 2).ToString();
         }
 
         private void Clear(object obj)
